@@ -23,6 +23,48 @@ class _UserTransactionsState extends State<UserTransactions> {
       amount: 16.53,
       date: DateTime.now(),
     ),
+    Transaction(
+      id: '1213',
+      title: 'Car repair',
+      amount: 16.53,
+      date: DateTime.now(),
+    ),
+    Transaction(
+      id: '1213',
+      title: 'blob',
+      amount: 16.53,
+      date: DateTime.now(),
+    ),
+    Transaction(
+      id: '1213',
+      title: 'ter',
+      amount: 16.53,
+      date: DateTime.now(),
+    ),
+    Transaction(
+      id: '1213',
+      title: 'erw Groceries',
+      amount: 16.53,
+      date: DateTime.now(),
+    ),
+    Transaction(
+      id: '1213',
+      title: 'Weekly rwe',
+      amount: 16.53,
+      date: DateTime.now(),
+    ),
+    Transaction(
+      id: '1213',
+      title: 'sdd Groceries',
+      amount: 16.53,
+      date: DateTime.now(),
+    ),
+    Transaction(
+      id: '1213',
+      title: 'hdd Groceries',
+      amount: 16.53,
+      date: DateTime.now(),
+    ),
   ];
 
   void _addNewTransaction(String txTitle, double txAmount) {
@@ -43,8 +85,8 @@ class _UserTransactionsState extends State<UserTransactions> {
     return Column(
       children: <Widget>[
         NewTransaction(_addNewTransaction),
-        TransactionList(_userTransactions),//~ pass _userTransaction to "new_transactions" class 
-        //! Honstly im totaly lost on this one 
+        TransactionList(
+            _userTransactions), //~ pass _userTransaction to "new_transactions" class
       ],
     );
   }
