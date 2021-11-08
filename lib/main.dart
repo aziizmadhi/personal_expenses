@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
-import './widgets/user_transactions.dart';
+import './widgets/new_transaction.dart';
+import './widgets/transaction_list.dart';
+import './models/transaction.dart';
 
 void main() => runApp(MyApp());
 
@@ -8,42 +10,108 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter App',
+      title: 'Navigator name ?',
+      theme: ThemeData(
+          primarySwatch: Colors.cyan,
+          accentColor: Colors.red,
+          //!change to the newer way
+          fontFamily: 'QuickSand'
+
+          //! Why is everything deprecated so much better than the new shit
+          ),
       home: MyHomePage(),
     );
   }
 }
 
-class MyHomePage extends StatelessWidget {
+class MyHomePage extends StatefulWidget {
   // String titleInput;
   // String amountInput;
-  // final titleController = TextEditingController();
-  // final amountController = TextEditingController();
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  final List<Transaction> _userTransactions = [
+    Transaction(
+      id: 't1',
+      title: 'New Shoes',
+      amount: 69.99,
+      date: DateTime.now(),
+    ),
+    Transaction(
+      id: 't2',
+      title: 'Weekly Groceries',
+      amount: 16.53,
+      date: DateTime.now(),
+    ),
+  ];
+
+  void _addNewTransaction(String txTitle, double txAmount) {
+    final newTx = Transaction(
+      title: txTitle,
+      amount: txAmount,
+      date: DateTime.now(),
+      id: DateTime.now().toString(),
+    );
+
+    setState(() {
+      _userTransactions.add(newTx);
+    });
+  }
+
+  void _startAddNewTransaction(BuildContext ctx) {
+    showModalBottomSheet(
+      context: ctx,
+      builder: (_) {
+        return GestureDetector(
+          //! class 93
+          onTap: () {},
+          //* do nothing when the user clicks on the modal
+          child: NewTransaction(_addNewTransaction),
+          //* what the modal shows
+          behavior: HitTestBehavior.opaque,
+          //*catches the tap and routs it to "onTap"
+        );
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Flutter App'),
+        title: Text('In App Name'),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.add),
+            onPressed: () => _startAddNewTransaction(context),
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         child: Column(
-          // mainAxisAlignment: MainAxisAlignment.start, //~ Where the cards are placed 'Vertically'
-          crossAxisAlignment: CrossAxisAlignment
-              .stretch, //~ Where the cards are placed 'Horizontally' and thier width
-
+          // mainAxisAlignment: MainAxisAlignment.start,
+          //~ Where the cards are placed 'Vertically'
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          //~ Where the cards are placed 'Horizontally' and thier width
           children: <Widget>[
             Container(
               width: double.infinity,
               child: Card(
-                color: Colors.blue,
+                color: Theme.of(context).primaryColor,
                 child: Text('CHART!'),
                 elevation: 5,
               ),
             ),
-            UserTransactions()
+            TransactionList(_userTransactions),
           ],
         ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+        onPressed: () => _startAddNewTransaction(context),
       ),
     );
   }
