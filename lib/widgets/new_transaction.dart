@@ -1,28 +1,33 @@
 import 'package:flutter/material.dart';
 
-class NewTransaction extends StatelessWidget {
+class NewTransaction extends StatefulWidget {
   final Function addTx;
+
+  NewTransaction(this.addTx);
+  @override
+  State<NewTransaction> createState() => _NewTransactionState();
+}
+
+class _NewTransactionState extends State<NewTransaction> {
   final titleController = TextEditingController();
   final amountController = TextEditingController();
-
-  NewTransaction(
-      this.addTx); //~ Accepts the privet function passing from "user_transactions"
 
   void onSubmit() {
     final titleText = titleController.text;
     final dAmount = double.parse(amountController.text);
 
-    print("object");
+    // print("object");
 
     if (titleText.isEmpty || dAmount <= 0) {
       print("null values");
       return;
     }
 
-    addTx(
+    widget.addTx(
       titleText,
       dAmount,
     );
+    Navigator.of(context).pop();
   }
 
   @override
