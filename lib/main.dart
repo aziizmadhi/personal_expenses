@@ -88,7 +88,11 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  void _deleteTransaction(){}
+  void _deleteTransaction(String id){
+    setState(() {
+      _userTransactions.removeWhere((transId) => transId.id == id);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -110,7 +114,7 @@ class _MyHomePageState extends State<MyHomePage> {
           //~ Where the cards are placed 'Horizontally' and thier width
           children: <Widget>[
             Chart(_recentTransactions), //! class 102 \ not sure about this
-            TransactionList(_userTransactions),
+            TransactionList(_userTransactions , _deleteTransaction),
           ],
         ),
       ),
