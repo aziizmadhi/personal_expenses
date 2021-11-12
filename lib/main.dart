@@ -58,11 +58,11 @@ class _MyHomePageState extends State<MyHomePage> {
     }).toList(); //* ".where" function returns type 'Iterable' I need a List
   }
 
-  void _addNewTransaction(String txTitle, double txAmount) {
+  void _addNewTransaction(String txTitle, double txAmount , DateTime chosenDate) {
     final newTx = Transaction(
       title: txTitle,
       amount: txAmount,
-      date: DateTime.now(),
+      date: chosenDate == null ?DateTime.now() : chosenDate,
       id: DateTime.now().toString(),
     );
 
@@ -87,6 +87,8 @@ class _MyHomePageState extends State<MyHomePage> {
       },
     );
   }
+
+  void _deleteTransaction(){}
 
   @override
   Widget build(BuildContext context) {
