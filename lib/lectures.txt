@@ -21,7 +21,11 @@ lecture 168 ClipRRect widget
 lecture 169 Positioned widget > Choose the exact location of the child widget
 lecture 170 every view/Standlone widget needs a scaffuld;
 lecture 171 Looks to be complex and might need another watch, for use in dynamiclly generated views;
-lecture
+lecture 172 divider widegt will simply draw a horozantal line in a column widegt;
+lecture 173 TapBar >> Amazing, defenatly ned a rewatch;
+lecture 174 bottomNavigationBar is just like a TapBar but in the bottom of the screen, with diffrent syntax and placement;
+lecture 175 Drawer >> like a sideways dropdown menu >> easy to setup;
+
 
 
 
