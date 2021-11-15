@@ -9,47 +9,53 @@ class ChartBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        Container(
-          height: 20, //~ to fix the bar hight if the text above is too small
-          child: FittedBox(
-              //^ fitted box is amazing
-              child: Text('\$${spendingAmount.toStringAsFixed(0)}')),
-        ),
-        SizedBox(
-          //!research what sizedbox is
-          height: 4,
-        ),
-        Container(
-          height: 60,
-          width: 10,
-          child: Stack(
-            children: <Widget>[
-              Container(
-                decoration: BoxDecoration(
-                  border: Border.all(color: Colors.grey, width: 1.0),
-                  color: Color.fromRGBO(220, 220, 220, 1),
-                  borderRadius: BorderRadius.circular(10),
-                ),
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        return Column(
+          children: <Widget>[
+            Container(
+              height: 15,
+              //~ to fix the bar hight if the text above is too small
+              child: FittedBox(
+                  //^ fitted box is amazing
+                  child: Text('\$${spendingAmount.toStringAsFixed(0)}')),
+            ),
+            SizedBox(
+              //!research what sizedbox is
+              height: 2,
+            ),
+            //TODO while implementing lecture number 122 the ui crashed
+            // IOS ponted to a container here and android pointed to the scaffuld in the main class
+            Container(
+              height: 60, // make this val dynamic
+              width: 10,
+              child: Stack(
+                children: <Widget>[
+                  Container(
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.grey, width: 1.0),
+                      color: Color.fromRGBO(220, 220, 220, 1),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                  ),
+                  FractionallySizedBox(
+                    heightFactor: spendingPctOfTotal,
+                    child: Container(
+                      decoration: BoxDecoration(
+                          color: Theme.of(context).primaryColor,
+                          borderRadius: BorderRadius.circular(10)),
+                    ),
+                  ),
+                ],
               ),
-              FractionallySizedBox(
-                heightFactor: spendingPctOfTotal,
-                alignment: Alignment.bottomCenter,
-                child: Container(
-                  decoration: BoxDecoration(
-                      color: Theme.of(context).primaryColor,
-                      borderRadius: BorderRadius.circular(10)),
-                ),
-              ),
-            ],
-          ),
-        ),
-        SizedBox(
-          height: 4,
-        ),
-        Text(lable)
-      ],
+            ),
+            SizedBox(
+              height: 4,
+            ),
+            Text(lable)
+          ],
+        );
+      },
     );
   }
 }

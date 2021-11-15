@@ -1,0 +1,27 @@
+skipped 128 lecture;
+intresting 129 lecture;
+lecture 131 Cubertino => IOS Theme; //*****
+Cubertino ignored for now;
+Platform.isIOS => bool;
+lecture 135 adabtive code; 
+lecture 137 Has Amazing resources;
+lecture 143 cosnt helps the app run faster "just a bit";
+lecture 145 extract widget is fucking great;
+lecture 146 '...' before a list to "flatten a list" converts a list of widgets to to normal widgets;
+lecture 147 didnt understand a single word;
+lecture 149 you can extend multible class with the "with" key word;
+lecture 150 explaning "context";
+lecture 153 explaning 'Keys" && "value Keys";
+lecture 160 setting up a main page;
+lecture 162 Inkwell adds an on click lister and animation on containers; 
+lecture 162 Navigator is a flutter fuction that transtions to a new page/view;
+lecture 165 storing the named route to a page in a static const varible; 
+lecture 166 enum explenation; 
+lecture 168 ClipRRect widget 
+lecture 169 Positioned widget > Choose the exact location of the child widget
+lecture 170 every view/Standlone widget needs a scaffuld;
+lecture 171 Looks to be complex and might need another watch, for use in dynamiclly generated views;
+lecture
+
+
+
