@@ -15,7 +15,8 @@ class TransactionList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.height * 0.7,
+      color: Colors.grey[200],
+      height: MediaQuery.of(context).size.height * 0.65,
       //& Lecture number 120 ^^
       //TODO make hight dynamic based on the screen size
       child: transactions.isEmpty //^ if
@@ -44,7 +45,7 @@ class TransactionList extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10.0), //! play with it
                   ),
                   margin: EdgeInsets.symmetric(vertical: 3, horizontal: 15),
-                  elevation: 8,
+                  elevation: 0,
                   child: ListTile(
                     leading: CircleAvatar(
                       radius: 30,

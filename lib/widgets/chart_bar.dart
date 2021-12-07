@@ -12,6 +12,7 @@ class ChartBar extends StatelessWidget {
     return LayoutBuilder(
       builder: (context, constraints) {
         return Column(
+          //? Text Price 
           children: <Widget>[
             Container(
               height: 15,

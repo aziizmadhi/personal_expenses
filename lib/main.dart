@@ -24,7 +24,6 @@ class MyApp extends StatelessWidget {
           accentColor: Colors.red,
           //!change to the newer way
           fontFamily: 'QuickSand'
-
           //! Why is everything deprecated so much better than the new shit
           ),
       home: MyHomePage(),
@@ -54,50 +53,50 @@ class _MyHomePageState extends State<MyHomePage> {
       date: DateTime.now(),
     ),
     Transaction(
-      id: 't2',
+      id: 't3',
       title: 'Weekly Groceries',
       amount: 16.53,
       date: DateTime.now(),
     ),
     Transaction(
-      id: 't2',
+      id: 't4',
       title: 'Weekly Groceries',
       amount: 16.53,
       date: DateTime.now(),
     ),
     Transaction(
-      id: 't2',
+      id: 't5',
       title: 'Weekly Groceries',
       amount: 16.53,
       date: DateTime.now(),
     ),
     Transaction(
-      id: 't2',
+      id: 't6',
       title: 'Weekly Groceries',
       amount: 16.53,
       date: DateTime.now(),
     ),
     Transaction(
-      id: 't2',
+      id: 't7',
       title: 'Weekly Groceries',
       amount: 16.53,
       date: DateTime.now(),
     ),
     Transaction(
-      id: 't2',
+      id: 't8',
       title: 'Weekly Groceries',
       amount: 16.53,
       date: DateTime.now(),
     ),
     Transaction(
-      id: 't2',
+      id: 't9',
       title: 'Weekly Groceries',
       amount: 16.53,
       date: DateTime.now(),
     ),
     Transaction(
-      id: 't2',
-      title: 'Weekly Groceries',
+      id: 't10',
+      title: 'last',
       amount: 16.53,
       date: DateTime.now(),
     ),
@@ -153,8 +152,10 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[200],
       appBar: AppBar(
-        title: Text('In App Name'),
+        elevation: 0,
+        title: Text('Abdulaziz Almadhi'),
         actions: <Widget>[
           IconButton(
             //TODO the  button covers up some list items

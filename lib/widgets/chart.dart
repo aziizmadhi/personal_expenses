@@ -25,7 +25,6 @@ class Chart extends StatelessWidget {
           //& if everything is true then add recent transactions to the total
         }
       }
-
       print(DateFormat.E().format(weekDay) + ' : ' + totalSum.toString());
       //print(totalSum);
       return {
@@ -44,11 +43,12 @@ class Chart extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //& print(groupedTransactionValues); //for debugging
-    return Card(
+    return Card( 
+      //? The barcharts card
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10.0),
       ),
-      elevation: 4,
+      elevation: 0,
       margin: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
       child: Padding(
         padding: EdgeInsets.all(20),
