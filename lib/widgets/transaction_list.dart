@@ -41,34 +41,39 @@ class TransactionList extends StatelessWidget {
               //^ false
               itemBuilder: (ctx, index) {
                 return Card(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0), //! play with it
-                  ),
-                  margin: EdgeInsets.symmetric(vertical: 3, horizontal: 15),
-                  elevation: 0,
-                  child: ListTile(
-                    leading: CircleAvatar(
-                      radius: 30,
-                      child: Padding(
-                        padding: EdgeInsets.all(8),
-                        child: FittedBox(
-                          child: Text('\$${transactions[index].amount}'),
-                        ),
-                      ),
+                    shape: RoundedRectangleBorder(
+                      borderRadius:
+                          BorderRadius.circular(10.0), //! play with it
                     ),
-                    title: Text(transactions[index].title),
-                    subtitle: Text(
-                      DateFormat.yMMMd().format(transactions[index].date),
-                    ),
-                    trailing: IconButton(
-                        icon: Icon(
-                          Icons.delete,
-                          color: Colors.red,
+                    margin: EdgeInsets.symmetric(vertical: 3, horizontal: 15),
+                    elevation: 0,
+                    child: ListTile(
+                        leading: CircleAvatar(
+                          backgroundColor: Colors.red,
+                          //* set color based on type
+                          radius: 20,
+                          child: Padding(
+                            padding: EdgeInsets.all(8),
+                            child: FittedBox(
+                              child: FittedBox(
+                                  child: Icon(
+                                Icons.directions_car,
+                                color: Colors.white,
+                              )),
+                            ),
+                          ),
                         ),
-                        onPressed: () => deleteTx(transactions[index].id)),
-                    //~ "() =>" alows me to pass an argument (transactions[index].id) in this case
-                  ),
-                );
+                        title: Text(transactions[index].title),
+                        subtitle: Text(
+                          DateFormat.yMMMd().format(transactions[index].date),
+                        ),
+                        trailing: Text(
+                          '+ \$${transactions[index].amount}',
+                          style: TextStyle(
+                              fontSize: 15, fontWeight: FontWeight.w600),
+                          //TODO if Transaction is additive color = green and a '+' is added at the start
+                          //TODO if transaction is subtracted color = red and a '-' is added at the start  
+                        )));
               },
               itemCount: transactions.length,
             ),

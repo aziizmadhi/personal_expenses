@@ -42,13 +42,6 @@ class Chart extends StatelessWidget {
 
   Widget weekly() {
     return Container(
-      child: Card(
-        color: Colors.red,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10.0),
-        ),
-        elevation: 4,
-        margin: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
         child: Padding(
           padding: EdgeInsets.all(20),
           child: Row(
@@ -68,15 +61,35 @@ class Chart extends StatelessWidget {
             }).toList(),
           ),
         ),
-      ),
     );
   }
 
-  Widget textly() {
-    return Text('data');
+  Widget totalBalance() {
+    return Container(
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: const Text(
+                'Total Balance',
+                style: TextStyle(fontSize: 15, fontWeight: FontWeight.w500),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                '\$300,00',
+                style: TextStyle(fontSize: 40),
+              ),
+            ),
+            Text(
+              '+\$89.99',
+              style: TextStyle(fontSize: 20 , color: Colors.green),
+            )
+          ],
+        ),
+    );
   }
-
-  final List<int> colorCodes = <int>[600, 500, 100];
 
   @override
   Widget build(BuildContext context) {
@@ -89,11 +102,12 @@ class Chart extends StatelessWidget {
         physics: const PageScrollPhysics(),
         padding: const EdgeInsets.only(top: 5),
         children: <Widget>[
-          SizedBox(width: MediaQuery.of(context).size.width, child: weekly()),
-          //^ Replace weekly with total balance widget
-          SizedBox(width: MediaQuery.of(context).size.width, child: weekly()),
+          SizedBox(
+              width: MediaQuery.of(context).size.width, child: totalBalance()),
           //^ Replace with other widget Maybe monthly ? or what catogory are spent on the most
           SizedBox(width: MediaQuery.of(context).size.width, child: weekly()),
+          //^ Replace weekly with total balance widget
+          // SizedBox(width: MediaQuery.of(context).size.width, child: weekly()),
         ],
       ),
     );
