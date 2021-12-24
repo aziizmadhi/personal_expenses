@@ -25,7 +25,6 @@ class Chart extends StatelessWidget {
           //& if everything is true then add recent transactions to the total
         }
       }
-
       print(DateFormat.E().format(weekDay) + ' : ' + totalSum.toString());
       //print(totalSum);
       return {
@@ -44,7 +43,7 @@ class Chart extends StatelessWidget {
   Widget weekly() {
     return Container(
       child: Card(
-        color: Colors.amber,
+        color: Colors.red,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10.0),
         ),

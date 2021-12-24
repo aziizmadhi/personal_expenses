@@ -55,7 +55,7 @@ class _NewTransactionState extends State<NewTransaction> {
   @override
   Widget build(BuildContext context) {
     return Card(
-      elevation: 5,
+      elevation: 0,
       child: Container(
         padding: EdgeInsets.only(
             top: 10,
@@ -101,7 +101,7 @@ class _NewTransactionState extends State<NewTransaction> {
             ElevatedButton(
               child: Text('Add Transaction'),
               style: TextButton.styleFrom(
-                elevation: 5,
+                elevation: 0,
                 primary: Colors.white,
                 backgroundColor: Theme.of(context).primaryColor,
               ),
