@@ -25,6 +25,11 @@ lecture 172 divider widegt will simply draw a horozantal line in a column widegt
 lecture 173 TapBar >> Amazing, defenatly ned a rewatch;
 lecture 174 bottomNavigationBar is just like a TapBar but in the bottom of the screen, with diffrent syntax and placement;
 lecture 175 Drawer >> like a sideways dropdown menu >> easy to setup;
+lecture 177 push replacement, great for memory managment and UX;
+lecture 179 intresting way to orgnize code, must watch;
+lecture 180 filtering logic;
+lecture 184 resources on Navigarion and named Routes 
+
 
 
 

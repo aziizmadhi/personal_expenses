@@ -41,33 +41,61 @@ class Chart extends StatelessWidget {
     });
   }
 
+  Widget weekly() {
+    return Container(
+      child: Card(
+        color: Colors.amber,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10.0),
+        ),
+        elevation: 4,
+        margin: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+        child: Padding(
+          padding: EdgeInsets.all(20),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: groupedTransactionValues.map((data) {
+              return Flexible(
+                fit: FlexFit.tight,
+                child: ChartBar(
+                    data['day'],
+                    data['amount'],
+                    totalSpending == 0.0
+                        ? 0.0
+                        : (data['amount'] as double) / totalSpending),
+              );
+              //~ if "totalSpending" = 0 return 0 else do the equation
+              //~ to avoid division by 0
+            }).toList(),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget textly() {
+    return Text('data');
+  }
+
+  final List<int> colorCodes = <int>[600, 500, 100];
+
   @override
   Widget build(BuildContext context) {
     //& print(groupedTransactionValues); //for debugging
-    return Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(10.0),
-      ),
-      elevation: 4,
-      margin: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
-      child: Padding(
-        padding: EdgeInsets.all(20),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: groupedTransactionValues.map((data) {
-            return Flexible(
-              fit: FlexFit.tight,
-              child: ChartBar(
-                  data['day'],
-                  data['amount'],
-                  totalSpending == 0.0
-                      ? 0.0
-                      : (data['amount'] as double) / totalSpending),
-            );
-            //~ if "totalSpending" = 0 return 0 else do the equation
-            //~ to avoid division by 0
-          }).toList(),
-        ),
+    return Container(
+      height: 165, //~ Make this val dynamic
+      child: ListView(
+        // shrinkWrap: false,
+        scrollDirection: Axis.horizontal,
+        physics: const PageScrollPhysics(),
+        padding: const EdgeInsets.only(top: 5),
+        children: <Widget>[
+          SizedBox(width: MediaQuery.of(context).size.width, child: weekly()),
+          //^ Replace weekly with total balance widget
+          SizedBox(width: MediaQuery.of(context).size.width, child: weekly()),
+          //^ Replace with other widget Maybe monthly ? or what catogory are spent on the most
+          SizedBox(width: MediaQuery.of(context).size.width, child: weekly()),
+        ],
       ),
     );
   }
