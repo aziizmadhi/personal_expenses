@@ -153,18 +153,18 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[200],
-      appBar: AppBar(
-        elevation: 0,
-        title: Text('Abdulaziz Almadhi'),
-        actions: <Widget>[
-          IconButton(
-            //TODO the  button covers up some list items
-            //? posiible solution is make it hide when a user scrolles down
-            icon: Icon(Icons.add),
-            onPressed: () => _startAddNewTransaction(context),
-          ),
-        ],
-      ),
+      // appBar: AppBar(
+      //   elevation: 0,
+      //   title: Text('Gurush'),
+      //   actions: <Widget>[
+      //     IconButton(
+      //       //TODO the  button covers up some list items
+      //       //? posiible solution is make it hide when a user scrolles down
+      //       icon: Icon(Icons.add),
+      //       onPressed: () => _startAddNewTransaction(context),
+      //     ),
+      //   ],
+      // ),
       body: SingleChildScrollView(
         child: Column(
           // mainAxisAlignment: MainAxisAlignment.start,

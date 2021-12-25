@@ -16,7 +16,7 @@ class TransactionList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.grey[200],
-      height: MediaQuery.of(context).size.height * 0.65,
+      height: MediaQuery.of(context).size.height * 0.75,
       //& Lecture number 120 ^^
       //TODO make hight dynamic based on the screen size
       child: transactions.isEmpty //^ if
@@ -38,7 +38,7 @@ class TransactionList extends StatelessWidget {
               ],
             )
           : ListView.builder(
-              //^ false
+              //^ id above statment is false
               itemBuilder: (ctx, index) {
                 return Card(
                     shape: RoundedRectangleBorder(

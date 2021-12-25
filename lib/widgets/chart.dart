@@ -69,7 +69,7 @@ class Chart extends StatelessWidget {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.only(top: 30),
               child: const Text(
                 'Total Balance',
                 style: TextStyle(fontSize: 15, fontWeight: FontWeight.w500),
