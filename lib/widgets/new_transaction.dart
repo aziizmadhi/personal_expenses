@@ -13,10 +13,13 @@ class _NewTransactionState extends State<NewTransaction> {
   final _titleController = TextEditingController();
   final _amountController = TextEditingController();
   DateTime _selectedDate;
+  bool isSwitched = false;
 
   void _onSubmit() {
     final titleText = _titleController.text;
-    final dAmount = double.parse(_amountController.text);
+    final dAmount = isSwitched == false
+        ? -1 * double.parse(_amountController.text)
+        : double.parse(_amountController.text);
 
     // print("object");
 
@@ -107,10 +110,22 @@ class _NewTransactionState extends State<NewTransaction> {
               ),
               onPressed: () {
                 _onSubmit();
-                //! According to the tut this should not work it should be "_onSubmit;"
               },
               //~ onPress send titleCon.. and amountCon.. to addNewTransaction function from "user_trans.." class
               //? How did this button get to be on the right of the page ?
+            ),
+            Switch(
+              value: isSwitched,
+              onChanged: (value) {
+                setState(() {
+                  isSwitched = value;
+                  print(isSwitched);
+                });
+              },
+              activeTrackColor: Colors.lightGreenAccent,
+              activeColor: Colors.green,
+              inactiveTrackColor: Colors.red[200],
+              inactiveThumbColor: Colors.red,
             ),
           ],
         ),

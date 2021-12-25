@@ -46,60 +46,6 @@ class _MyHomePageState extends State<MyHomePage> {
       amount: 69.99,
       date: DateTime.now(),
     ),
-    Transaction(
-      id: 't2',
-      title: 'Weekly Groceries',
-      amount: 16.53,
-      date: DateTime.now(),
-    ),
-    Transaction(
-      id: 't3',
-      title: 'Weekly Groceries',
-      amount: 16.53,
-      date: DateTime.now(),
-    ),
-    Transaction(
-      id: 't4',
-      title: 'Weekly Groceries',
-      amount: 16.53,
-      date: DateTime.now(),
-    ),
-    Transaction(
-      id: 't5',
-      title: 'Weekly Groceries',
-      amount: 16.53,
-      date: DateTime.now(),
-    ),
-    Transaction(
-      id: 't6',
-      title: 'Weekly Groceries',
-      amount: 16.53,
-      date: DateTime.now(),
-    ),
-    Transaction(
-      id: 't7',
-      title: 'Weekly Groceries',
-      amount: 16.53,
-      date: DateTime.now(),
-    ),
-    Transaction(
-      id: 't8',
-      title: 'Weekly Groceries',
-      amount: 16.53,
-      date: DateTime.now(),
-    ),
-    Transaction(
-      id: 't9',
-      title: 'Weekly Groceries',
-      amount: 16.53,
-      date: DateTime.now(),
-    ),
-    Transaction(
-      id: 't10',
-      title: 'last',
-      amount: 16.53,
-      date: DateTime.now(),
-    ),
   ];
 
   List<Transaction> get _recentTransactions {
@@ -153,18 +99,6 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[200],
-      // appBar: AppBar(
-      //   elevation: 0,
-      //   title: Text('Gurush'),
-      //   actions: <Widget>[
-      //     IconButton(
-      //       //TODO the  button covers up some list items
-      //       //? posiible solution is make it hide when a user scrolles down
-      //       icon: Icon(Icons.add),
-      //       onPressed: () => _startAddNewTransaction(context),
-      //     ),
-      //   ],
-      // ),
       body: SingleChildScrollView(
         child: Column(
           // mainAxisAlignment: MainAxisAlignment.start,

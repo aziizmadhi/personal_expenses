@@ -25,7 +25,7 @@ class Chart extends StatelessWidget {
           //& if everything is true then add recent transactions to the total
         }
       }
-      print(DateFormat.E().format(weekDay) + ' : ' + totalSum.toString());
+      //print(DateFormat.E().format(weekDay) + ' : ' + totalSum.toString());
       //print(totalSum);
       return {
         'day': DateFormat.E().format(weekDay).substring(0, 1),
